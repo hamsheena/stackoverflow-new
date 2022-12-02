@@ -1,0 +1,12 @@
+.iframe-class{
+    width: 460px;
+    height:280px;
+}
+
+@media screen and (max-width:960px) {
+    .iframe-class{
+        width: 300px;
+        margin-right: 30px;
+        height:280px;
+    }
+}

@@ -16,3 +16,13 @@ export const updateProfile = (id, updateData) => async (dispatch) => {
         console.log(error)
     }
 }
+
+
+export const friendUser = (id) => async (dispatch) => {
+    try {
+     await api.friendUser(id)
+       // dispatch(id)
+    } catch (error) {
+        console.log(error)
+    }
+}

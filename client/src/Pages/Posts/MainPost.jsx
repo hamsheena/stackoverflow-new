@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 //import { useSelector} from 'react-redux'
 import './MainPost.css'
 import PostsList from './PostsList'
-import { setCurrentUser } from '../../actions/currentUser'
+//import { setCurrentUser } from '../../actions/currentUser'
 import { useSelector, useDispatch } from 'react-redux'
 
 const MainPost = () => {
@@ -83,7 +83,7 @@ const MainPost = () => {
         <div className='main-bar'>
             <div className='main-bar-header'>
                 {
-                    location.pathname === '/' ? <h1>All Posts</h1> : <h1>Posts for you</h1>
+                    location.pathname === '/Posts' ? <h1>All Posts</h1> : <h1>Posts for you</h1>
                 }
                 <button onClick={checkAuth} className='ask-btn'>Create Post</button>
             </div>

@@ -12,7 +12,7 @@ const DisplayQuestion = () => {
       <div className='home-container-3'>
       <QuestionsDetails/>
       </div>
-      <RightSidebar/>
+      
       </div>
      
  </div> 

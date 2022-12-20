@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {useSelector} from 'react-redux'
+import React, {useState,useEffect} from 'react'
+import {useSelector,useDispatch} from 'react-redux'
 import { useParams } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faPen,faUserFriends } from '@fortawesome/free-solid-svg-icons'
@@ -11,6 +11,7 @@ import EditProfileForm from './EditProfileForm'
 import ProfileBio from './ProfileBio'
 import './UserProfile.css'
 import MainPost from '../Posts/MainPost'
+import { friendUser } from '../../actions/users'
 
 const UserProfile = () => {
 
@@ -19,6 +20,51 @@ const UserProfile = () => {
     const currentProfile = users.filter((user) => user._id === id)[0]
     const currentUser = useSelector((state) => state.currentUserReducer)
     const [Switch, setSwitch] = useState(false)
+    const [following, setFollowing] = useState(false);
+   // const[fetchAgain,setFetchAgain] = useState(false)
+    const dispatch = useDispatch()
+   // const{error:followError, message:followMessage} = useSelector((state) => state.follow)
+    //const [errors, setErrors] = useState(null);
+    //const [success, setSuccess] = useState(null);
+    //const [openE, setOpenE] = useState(false);
+   
+    const followHandle = (e) => {
+        e.preventDefault()
+        setSwitch(false)
+        setFollowing(!following)
+        dispatch(friendUser(id))//id is the id from params of selected users
+      //  setFetchAgain(!fetchAgain)
+    }
+    
+
+    useEffect(() => {
+        
+        setFollowing(
+          
+            currentUser?.result?.friends?.some((friend) => friend === currentProfile._id)
+        );
+        
+      }, [currentUser, currentProfile]);
+
+   /* useEffect(() => {
+        if(currentUser){
+             currentUser?.result?.friends.map(friends => {
+                if(friends._id===currentProfile._id){
+                    console.log("inside if")
+                    return setFollowing(true)
+                }
+            })
+        }else{
+            console.log("inside else")
+            return setFollowing(false)
+        }
+    },[currentUser,currentProfile])*/
+
+
+
+  
+
+  
 
     return (
         <div className='home-container-1'>
@@ -41,11 +87,13 @@ const UserProfile = () => {
                                 <button type='button' onClick={() => setSwitch(true)} className='edit-profile-btn'>
                                     <FontAwesomeIcon icon={faPen} /> Edit Profile
                                 </button>
-                            ) : (
-                                <button type='button' onClick={() => setSwitch(false)} className='edit-profile-btn'>
-                                    <FontAwesomeIcon icon={faUserFriends} /> Add Friend
+                            ) : 
+                            <>
+                         
+                                <button type='button' onClick={followHandle} className='edit-profile-btn'>
+                                    <FontAwesomeIcon icon={faUserFriends} /> {following?'Unfriend':'Add Friend'}
                                 </button>
-                            )
+                            </>
                         }
                     </div>
                     <>

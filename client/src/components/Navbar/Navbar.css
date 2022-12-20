@@ -35,10 +35,10 @@
 }
 
 
-.navbar form .search-icon{
+.search-icon{
 position: absolute;
-left: 25px;
-top: 8px;
+margin-left: 160px;
+margin-top: 2px;
 }
 
 .nav-links{
@@ -84,21 +84,21 @@ top: 8px;
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 60vw;
+    width: 58vw;
     justify-content: end;
     margin-right: 2rem;
    
 }
 
 .nav-links{
-    
+    color:black;
     text-decoration: none;
     padding: 0.5rem 1 rem;
    
 }
 
 .nav-links:hover{
-    background-color: #6d76f7;
+    background-color: #797676;
     border-radius: 4px;
     transition: all 0.2s ease-out;
 }
@@ -148,12 +148,13 @@ top: 8px;
     }
     .nav-links{
         text-align:center;
+        justify-content: end;
         padding: 2rem;
         width: 70%;
         display: table;
     }
     .nav-links:hover{
-        background-color: #7577fa;
+        background-color: white;
         border-radius: 0;
 
     }
@@ -189,6 +190,10 @@ top: 8px;
     }
    .profile-view{
     padding: 3px;
+    margin-right: 45px;
+   }
+   .name-mobileview{
+    margin-left: 40px;
    }
 
     .desktop-view{

@@ -8,6 +8,7 @@ import questionRoutes from './routes/Questions.js'
 import answerRoutes from './routes/Answers.js'
 import postRoutes from './routes/Posts.js'
 import commentRoutes from './routes/Comments.js'
+import friendRoutes from './routes/friends.js'
 
 const app = express();
 dotenv.config();
@@ -26,6 +27,7 @@ app.use('/question',questionRoutes)
 app.use('/answer',answerRoutes)
 app.use('/posts', postRoutes)
 app.use('/comment', commentRoutes)
+app.use('/friend', friendRoutes)
 
 const PORT= process.env.PORT || 5000;
 

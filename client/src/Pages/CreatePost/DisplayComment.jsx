@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import './Comments.css'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
+import Avatar from '../../components/Avatar/Avatar'
 
 const DisplayComment = ({post}) => {
     const { id } = useParams()
@@ -20,7 +21,7 @@ const DisplayComment = ({post}) => {
                     <div>
                         <p>commented {moment(ans.commentedOn).fromNow()}</p>
                         <Link to={`/Users/${ans.userId}`} className='user-link' style={{color:'#0086d8'}}>
-                        <img src={ans.userImage} alt={ ans.userCommented.charAt(0).toUpperCase() } width="15" className='user' />
+                        <Avatar backgroundColor='green' px="8px" py="5py">{ans.userCommented.charAt(0).toUpperCase()}</Avatar>
                             <div>
                                 {ans.userCommented}
                             </div>

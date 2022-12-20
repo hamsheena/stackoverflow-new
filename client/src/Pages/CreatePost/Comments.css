@@ -1,8 +1,47 @@
-.question-details-page{
+@media screen and (max-width:960px) {
+    .question-details-page{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        position: absolute;
+       
+      height: 100vh;
+        padding: 0;
+    }
+    .postImg{
+        height: 200px;
+        width:250px;
+        
+        }
+
+    .question-actions-user{
+        float: right;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .postBottom{
+        display: flex;
+        justify-content: space-between;
+       
+
+    }
+    .postBottomLeft{
+        margin: 5px;
+    }
+
     
+}
+.question-details-page{
+    height: 100vh;
     width: calc( 100% - 300px - 24px);
     float: left;
-    margin: 25px 0px;
+    margin: 20px 0px;
+ 
     padding: 0px;
 
 }

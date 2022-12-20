@@ -6,6 +6,8 @@ import profile from '../../assets/profile_image.jpeg'
 //import {PermMedia, Label, Room, EmojiEmotions} from "@mui/icons-material"
 import './CreatePost.css'
 import {askPost} from '../../actions/post'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhotoFilm,faPhotoVideo } from '@fortawesome/free-solid-svg-icons'
 
 const CreatePost = () => {
 
@@ -13,6 +15,7 @@ const CreatePost = () => {
    const [ postPic, setPostPic ] = useState(null);
    const [ postVid, setPostVid ] = useState(null);
     const [imagePreview, setImagePreview] = useState(null);
+    const [videoPreview, setVideoPreview] = useState(null);
 
     const dispatch = useDispatch()
     const User = useSelector((state) => (state.currentUserReducer))
@@ -24,7 +27,9 @@ const CreatePost = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault()
-       //console.log({ postTitle, postPic, userPosted: User.result.name })
+       if(!postTitle){
+        alert("Post must have a title");
+       }
      dispatch(askPost({ postTitle, postPic,postVideo:postVid, userPosted: User.result.name,userPic : User.result.pic }, navigate))
         
     }
@@ -44,7 +49,9 @@ const CreatePost = () => {
         .then((res) => res.json())
         .then((data) => {
           setPostPic(data.url.toString());
+        
           setImagePreview(URL.createObjectURL(pics));
+          
           console.log(postPic);
         })
         .catch((err) => {
@@ -71,7 +78,8 @@ const CreatePost = () => {
         .then((data) => {
           setPostVid(data.url.toString());
           console.log(postVid)
-          setImagePreview(URL.createObjectURL(pics));
+         
+          setVideoPreview(URL.createObjectURL(pics));
           
         })
         .catch((err) => {
@@ -99,7 +107,7 @@ const CreatePost = () => {
           className={ vidstate === true ? 'upload-vid'  : 'nav-vid' }
       width="560"
       height="315"
-      src={imagePreview}
+      src={videoPreview}
       title="Cloudinary"
       frameborder="0"
       allowFullScreen
@@ -114,7 +122,7 @@ const CreatePost = () => {
                            
                             <label htmlFor='image-upload' className='image-upload-label'>
                            
-                            <span className='shareOptionText' >Photo</span>
+                            <span className='shareOptionText' ><FontAwesomeIcon icon={faPhotoFilm} /> Photo</span>
                             </label>
                             <input type="file" id='image-upload' hidden accept="image/png, image/jpeg"  onChange={(e) => postDetails(e.target.files[0])} />
                             </div>
@@ -131,7 +139,7 @@ const CreatePost = () => {
                            
                             <label htmlFor='vid-upload' className='image-upload-label'>
                            
-                            <span className='shareOptionText' >Video</span>
+                            <span className='shareOptionText' ><FontAwesomeIcon icon={faPhotoVideo} /> Video</span>
                             </label>
                             <input type="file" id="vid-upload" hidden accept="video/mp4,video/x-m4v,video/*"  onChange={(e) => postVideo(e.target.files[0])} />
                             </div>

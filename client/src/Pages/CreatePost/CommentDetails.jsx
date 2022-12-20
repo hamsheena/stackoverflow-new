@@ -17,7 +17,7 @@ const CommentDetails = () => {
       <div className='home-container-3'>
       <Comments/>
       </div>
-      <RightSidebar/>
+     
       </div>
       </div>
 

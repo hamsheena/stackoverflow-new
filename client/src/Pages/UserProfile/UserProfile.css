@@ -1,3 +1,40 @@
+@media screen and (max-width:960px) {
+    .user-details-container{
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+      
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .user-details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        
+    }
+
+    .profile-bio{
+        margin-left: 20px;
+    }
+
+    .edit-profile-btn{
+        padding: 8px 10px;
+        border: solid 1px white;
+        border-radius: 2px;
+        background-color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 12px;
+    }
+    .edit-profile-btn:hover{
+        background-color: #f5f9fc;
+    }
+
+}
+
 .user-details-container{
     width: 100%;
     margin-top: 50px;

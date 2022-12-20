@@ -85,7 +85,7 @@ main{
 }
 
 .icon, .link_text{
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 15px;
 }
 @media screen and (max-width:960px) {
@@ -103,7 +103,7 @@ main{
         background: #fbf3d5;
         color: black;
         height: 100vh;
-        margin-left: 45px;
+        margin-left: 20px;
         transition: all 0.5s;
     }
     .side-nav{

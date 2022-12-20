@@ -10,6 +10,7 @@ import likeimg from '../../assets/like.png'
 import './Comments.css'
 import {postComment} from '../../actions/post.js'
 import {votePost} from '../../actions/post.js'
+import '../Posts/frame.css'
 
 const Comments = () => {
     const { id } = useParams()
@@ -139,8 +140,7 @@ const Comments = () => {
              <img className='postImg' src={post.postPic} alt="" /> 
              :
              <iframe
-      width="560"
-      height="315"
+             className='iframe-class2'
       src={post.postVideo}
       title="Cloudinary"
       frameborder="0"

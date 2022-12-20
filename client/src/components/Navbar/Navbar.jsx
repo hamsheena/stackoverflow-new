@@ -93,7 +93,7 @@ const Navbar = () => {
                        <div className='nav-links-mobile'>
                         <div className='profile-view'>
                            
-                                <Link onClick={handleClick} to={`/Users/${User?.result?._id}`} style={{color:"white", textDecoration:'none'}}>
+                                <Link className='name-mobileview' onClick={handleClick} to={`/Users/${User?.result?._id}`} style={{color:"white", textDecoration:'none'}}>
                                    {User.result.name}</Link>
                                     </div>
                                     <Button  onClick={handleLogout}>Log out</Button>

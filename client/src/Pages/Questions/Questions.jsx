@@ -11,7 +11,10 @@ const Questions = () => {
       <LeftSidebar/>
       
       <div className='home-container-2'>
-        <HomeMainbar/>
+      <div className='home-contain-3'>
+      <HomeMainbar/>
+      </div>
+       
         <RightSidebar/>
         </div>
        

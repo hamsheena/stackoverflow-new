@@ -1,8 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
+import './UserProfile.css'
 
 const ProfileBio = ({currentProfile}) => {
+
+    const users = useSelector((state) => state.usersReducer)
+    
     return (
-        <div>
+        <div className='profile-bio'>
             <div>
                 {
                     currentProfile?.tags.length !== 0 ? (
@@ -31,7 +37,41 @@ const ProfileBio = ({currentProfile}) => {
                     )
                 }
             </div>
+            <div>
+                {
+                    currentProfile?.friends.length !== 0 ? (
+                        <>
+                            <h4>{currentProfile?.friends.length} Friends</h4>
+                            {
+                            /*    users.map((user) => (
+                                    <div  key={user?._id} >
+                                         
+                                        {
+                                             currentProfile?.friends.map((friend) => (
+                                                <div key={friend}>
+                                                    ({user?._id}==={friend})?
+                                         <>
+                                            <p>{user?.name} </p>
+                                            </>
+                                            :<>
+                                          <p>ERROR </p>
+                                          </>
+                                            
+                   </div>
+               ))}
+                                        </div>
+                                             ))*/}
+                               
+                               
+                            
+                        </>
+                    ) : (
+                        <p>0 friends</p>
+                    )
+                }
+            </div>
         </div>
+
     )
 }
 

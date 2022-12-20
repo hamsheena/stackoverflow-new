@@ -19,7 +19,7 @@ const Comments = () => {
     const postsList = useSelector(state => state.postsReducer)
 
     const location = useLocation()
-    const url = 'http://localhost:3000'
+    const url = 'https://stackoverflow-hamshi.onrender.com'
 
   const handleShare = () => {
     copy(url+location.pathname)

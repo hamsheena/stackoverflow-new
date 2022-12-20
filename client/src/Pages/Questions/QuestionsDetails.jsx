@@ -85,7 +85,7 @@ const QuestionsDetails = () => {
       const Navigate = useNavigate();
     const dispatch = useDispatch();
     const location = useLocation();
-    const url = 'https://stackoverflow-hamshi.onrender.com'
+    const url = 'https://stackoverflow-hamsheena.netlify.app'
 
 
       const handlePostAns = (e, answerLength) => {

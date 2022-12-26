@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux';
 import {fetchAllQuestions} from './actions/question'
 import { fetchAllUsers } from './actions/users';
 import Chat from '../src/components/ChatBot/Chat'
-
+import SupportEngine from '../src/components/SupportEngine';
 
 function App() {
 const dispatch=useDispatch();
@@ -20,11 +20,19 @@ useEffect(() => {
     <div>
       <Router>
         <Navbar />
+        <AllRoutes />
+  
+       
+      </Router>
+    </div>
+  /*  <div>
+      <Router>
+        <Navbar />
         <Chat />
         <AllRoutes />
       </Router>
       
-    </div>
+    </div>*/
   );
 }
 

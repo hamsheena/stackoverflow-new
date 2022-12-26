@@ -12,6 +12,7 @@ import UserProfile from './Pages/UserProfile/UserProfile'
 import CreatePost from './Pages/CreatePost/CreatePost'
 import Comments from './Pages/CreatePost/CommentDetails'
 
+
 const AllRoutes = () => {
   return (
     <Routes>
